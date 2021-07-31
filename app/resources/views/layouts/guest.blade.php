@@ -16,7 +16,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body>
+    <body class="antialiased bg-cover" style="background-image:url('images/welcome-page-background.jpg')">
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
