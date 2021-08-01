@@ -7,7 +7,7 @@
 .linkButton {
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
-      background-color: rgba(62, 128, 213);
+      background-color: #3B82F6;
       border-radius: 6px;
       text-align: center;
       color: white;

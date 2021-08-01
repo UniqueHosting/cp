@@ -16,16 +16,16 @@
     <body class="antialiased bg-cover" style="background-image:url('images/welcome-page-background.jpg')">
       <div class="h-screen dark:bg-gray-900" style="background-color:rgb(12,25,42,0.9);">
           <div class="w-screen h-screen flex justify-center items-center">
-            <div class="rounded-xl p-10 glass">
+            <div class="rounded-xl p-10">
               <div class="flex justify-center">
-                <h1 class="text-gray-100">Welkom bij</h1>
+                <h1 class="text-gray-100 mb-5">Welkom bij <strong>Unique Hosting</strong></h1>
               </div>
               <div class="flex justify-center">
                   <x-application-logo class="block h-10 w-auto fill-current text-gray-600"/>
               </div>
               <div class="">
                   @if (Route::has('login'))
-                      <div class="mt-8 text-center">
+                      <div class="mt-7 text-center">
                           @auth
                               <a href="{{ url('/dashboard') }}" class="linkButton px-24 py-2">Dashboard</a>
                           @else
