@@ -7,7 +7,6 @@
             </div>
             <div class="card-body">
                 <h6 class="card-subtitle">Check out Tickets From Zoho</h6>
-                <h1>{{$test}}</h1>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="edit-btn">
                         <thead>
