@@ -38,4 +38,3 @@ HOSTBILL
  EXACT ONLINE API > Included in HostBill
  <br> https://hostbillapp.com/products-services/exact-online/ > Nog aanschaffen bij Hostbill. Kan na licentie activatie.
 <br>https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10
-

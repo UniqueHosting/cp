@@ -1,17 +1,52 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="card m-b-30">
+            <div class="card-header">
+                <h5 class="card-title">Tickets Table</h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle">Check out Tickets From Zoho</h6>
+                <h1>{{$test}}</h1>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered" id="edit-btn">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Email ID</th>
+                            <th>Phone</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <td>1</td>
+                              <td>Mark</td>
+                              <td>CEO</td>
+                              <td>demo@example.com</td>
+                              <td>9898989898</td>
+                          </tr>
+                          <tr>
+                              <td>2</td>
+                              <td>Larry</td>
+                              <td>Manager</td>
+                              <td>demo@example.com</td>
+                              <td>9797979797</td>
+                          </tr>
+                          <tr>
+                              <td>3</td>
+                              <td>John</td>
+                              <td>Employee</td>
+                              <td>demo@example.com</td>
+                              <td>9696969696</td>
+                          </tr>
+                        </tbody>
+                    </table>
                 </div>
+
             </div>
         </div>
     </div>
+  </div>
 </x-app-layout>
