@@ -1,92 +1,170 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo-mini-black class="block h-10 w-auto fill-current text-gray-600"/>
-                    </a>
+    <div class="topbar-mobile">
+        <div class="row align-items-center">
+            <div class="col-md-12">
+                <div class="mobile-logobar">
+                    <a href="index.html" class="mobile-logo"><img src="assets/images/logo.svg" class="img-fluid" alt="logo"></a>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                <div class="mobile-togglebar">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <div class="topbar-toggle-icon">
+                                <a class="topbar-toggle-hamburger" href="javascript:void();">
+                                    <img src="assets/images/svg-icon/horizontal.svg" class="img-fluid menu-hamburger-horizontal" alt="horizontal">
+                                    <img src="assets/images/svg-icon/verticle.svg" class="img-fluid menu-hamburger-vertical" alt="verticle">
+                                 </a>
+                             </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="menubar">
+                                <a class="menu-hamburger" href="javascript:void();">
+                                    <img src="assets/images/svg-icon/menu.svg" class="img-fluid menu-hamburger-collapse" alt="collapse">
+                                    <img src="assets/images/svg-icon/close.svg" class="img-fluid menu-hamburger-close" alt="close">
+                                 </a>
+                             </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                            <div>{{ Auth::user()->name }}</div>
-
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
             </div>
         </div>
     </div>
-
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+    <div class="topbar">
+        <!-- Start row -->
+        <div class="row align-items-center">
+            <!-- Start col -->
+            <div class="col-md-12 align-self-center">
+                <div class="togglebar">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <div class="menubar">
+                                <a class="menu-hamburger" href="javascript:void();">
+                                   <img src="assets/images/svg-icon/menu.svg" class="img-fluid menu-hamburger-collapse" alt="menu">
+                                   <img src="assets/images/svg-icon/close.svg" class="img-fluid menu-hamburger-close" alt="close">
+                                 </a>
+                             </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="searchbar">
+                                <form>
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <button class="btn" type="submit" id="button-addonSearch"><img src="assets/images/svg-icon/search.svg" class="img-fluid" alt="search"></button>
+                                        </div>
+                                        <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addonSearch">
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="infobar">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <div class="languagebar">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="languagelink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="live-icon">EN</span><span class="feather icon-chevron-down live-icon"></span></a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="languagelink">
+                                        <a class="dropdown-item" href="#"><i class="flag flag-icon-us flag-icon-squared"></i>English</a>
+                                        <a class="dropdown-item" href="#"><i class="flag flag-icon-de flag-icon-squared"></i>German</a>
+                                        <a class="dropdown-item" href="#"><i class="flag flag-icon-bl flag-icon-squared"></i>France</a>
+                                        <a class="dropdown-item" href="#"><i class="flag flag-icon-ru flag-icon-squared"></i>Russian</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="settingbar">
+                                <a href="javascript:void(0)" id="infobar-settings-open" class="infobar-icon">
+                                    <img src="assets/images/svg-icon/settings.svg" class="img-fluid" alt="settings">
+                                    <span class="live-icon">3</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="notifybar">
+                                <div class="dropdown">
+                                    <a class="dropdown-toggle infobar-icon" href="#" role="button" id="notoficationlink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/svg-icon/notifications.svg" class="img-fluid" alt="notifications">
+                                    <span class="live-icon">2</span></a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notoficationlink">
+                                        <div class="notification-dropdown-title">
+                                            <h4>Notifications</h4>
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li class="media dropdown-item">
+                                                <span class="action-icon badge badge-success-inverse">N</span>
+                                                <div class="media-body">
+                                                    <h5 class="action-title">New trends for you</h5>
+                                                    <p><span class="timing">10 min ago</span></p>
+                                                </div>
+                                            </li>
+                                            <li class="media dropdown-item">
+                                                <span class="action-icon badge badge-primary-inverse"><i class="feather icon-gift"></i></span>
+                                                <div class="media-body">
+                                                    <h5 class="action-title">John birthday today</h5>
+                                                    <p><span class="timing">Today, 12:00 AM</span></p>
+                                                </div>
+                                            </li>
+                                            <li class="media dropdown-item">
+                                                <span class="action-icon badge badge-warning-inverse">T</span>
+                                                <div class="media-body">
+                                                    <h5 class="action-title">This is start of your story</h5>
+                                                    <p><span class="timing">Yesterday, 01:25 PM</span></p>
+                                                </div>
+                                            </li>
+                                            <li class="media dropdown-item">
+                                                <span class="action-icon badge badge-danger-inverse"><i class="feather icon-thumbs-up"></i></span>
+                                                <div class="media-body">
+                                                    <h5 class="action-title">Admin has 1 new like</h5>
+                                                    <p><span class="timing">5 Feb 2020, 03:31 PM</span></p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="profilebar">
+                                <div class="dropdown">
+                                  <a class="dropdown-toggle" href="#" role="button" id="profilelink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/profile.svg" class="img-fluid" alt="profile"><span class="live-icon">{{ Auth::user()->name }}</span><span class="feather icon-chevron-down live-icon"></span></a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profilelink">
+                                        <div class="dropdown-item">
+                                            <div class="profilename">
+                                              <h5>{{ Auth::user()->name }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="userbox">
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="media dropdown-item">
+                                                    <a href="#" class="profile-icon"><img src="assets/images/svg-icon/crm.svg" class="img-fluid" alt="user">My Profile</a>
+                                                </li>
+                                                <li class="media dropdown-item">
+                                                    <a href="#" class="profile-icon"><img src="assets/images/svg-icon/email.svg" class="img-fluid" alt="email">Email</a>
+                                                </li>
+                                                <!-- <li class="media dropdown-item">
+                                                    <a href="route('logout')" class="profile-icon"><img src="assets/images/svg-icon/logout.svg" class="img-fluid" alt="logout">Logout</a>
+                                                </li> -->
+                                                <li class="media dropdown-item">
+                                                  <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                      <x-dropdown-link class="profile-icon" :href="route('logout')"
+                                                      onclick="event.preventDefault();
+                                                      this.closest('form').submit();"><img src="assets/images/svg-icon/logout.svg" class="img-fluid" alt="logout">
+                                                      {{ __('Log Out') }}
+                                                      </x-dropdown-link>
+                                                  </form>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="mt-3 space-y-1">
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
+            <!-- End col -->
         </div>
+        <!-- End row -->
     </div>
 </nav>
