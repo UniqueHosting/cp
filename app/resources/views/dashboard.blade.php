@@ -11,35 +11,24 @@
                     <table class="table table-striped table-bordered" id="edit-btn">
                         <thead>
                           <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Email ID</th>
-                            <th>Phone</th>
+                            <th>Ticket Num</th>
+                            <th>department</th>
+                            <th>Contact Person</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                            <th>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                              <td>1</td>
-                              <td>Mark</td>
-                              <td>CEO</td>
-                              <td>demo@example.com</td>
-                              <td>9898989898</td>
-                          </tr>
-                          <tr>
-                              <td>2</td>
-                              <td>Larry</td>
-                              <td>Manager</td>
-                              <td>demo@example.com</td>
-                              <td>9797979797</td>
-                          </tr>
-                          <tr>
-                              <td>3</td>
-                              <td>John</td>
-                              <td>Employee</td>
-                              <td>demo@example.com</td>
-                              <td>9696969696</td>
-                          </tr>
+                          @for ($i = 0; $i < count($data['data']); $i++)
+                            <tr>
+                              <td>{{$data['data'][$i]['ticketNumber']}}</td>
+                              <td>{{$data['data'][$i]['department']['name']}}</td>
+                              <td>{{$data['data'][$i]['contact']['firstName']}}  {{$data['data'][$i]['contact']['lastName']}}</td>
+                              <td>{{$data['data'][$i]['subject']}}</td>
+                              <td>{{$data['data'][$i]['status']}}</td>
+                            </tr>
+                          @endfor
                         </tbody>
                     </table>
                 </div>
