@@ -1,32 +1,31 @@
 <x-app-layout>
   <div class="row">
     <div class="col-lg-12">
+      @isset($data->fetchedTickets)
         <div class="card m-b-30">
             <div class="card-header">
-                <h5 class="card-title">Tickets Table</h5>
+                <h5 class="card-title">Tickets</h5>
             </div>
             <div class="card-body">
-                <h6 class="card-subtitle">Check out Tickets From Zoho</h6>
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered" id="edit-btn">
+                    <table class="table table-borderless">
                         <thead>
                           <tr>
-                            <th>Ticket Num</th>
+                            <th>#</th>
                             <th>department</th>
                             <th>Contact Person</th>
                             <th>Subject</th>
                             <th>Status</th>
-                            <th>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          @for ($i = 0; $i < count($data['data']); $i++)
+                          @for ($i = 0; $i < count($data->fetchedTickets); $i++)
                             <tr>
-                              <td>{{$data['data'][$i]['ticketNumber']}}</td>
-                              <td>{{$data['data'][$i]['department']['name']}}</td>
-                              <td>{{$data['data'][$i]['contact']['firstName']}}  {{$data['data'][$i]['contact']['lastName']}}</td>
-                              <td>{{$data['data'][$i]['subject']}}</td>
-                              <td>{{$data['data'][$i]['status']}}</td>
+                              <td>{{ $data->fetchedTickets[$i]['ticketNumber']}}</td>
+                              <td>{{ $data->fetchedTickets[$i]['department']['name']}}</td>
+                              <td>{{ $data->fetchedTickets[$i]['contact']['firstName']}}  {{ $data->fetchedTickets[$i]['contact']['lastName']}}</td>
+                              <td>{{ $data->fetchedTickets[$i]['subject']}}</td>
+                              <td>{{ $data->fetchedTickets[$i]['status']}}</td>
                             </tr>
                           @endfor
                         </tbody>
@@ -35,6 +34,7 @@
 
             </div>
         </div>
+        @endisset
     </div>
   </div>
 </x-app-layout>

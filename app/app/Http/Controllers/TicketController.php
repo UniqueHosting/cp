@@ -15,6 +15,14 @@ class TicketController extends Controller
         'Authorization' => 'Zoho-oauthtoken '. $accessToken
       ])->get('https://desk.zoho.eu/api/v1/tickets',['include' => 'contacts,assignee,departments,team,isRead']);
 
-      return $response;
+      $fetchedTickets = json_decode($response,true);
+
+      if(isset($fetchedTickets['data'])){
+        $tickets = $fetchedTickets['data'];
+      }else{
+        $tickets = null;
+      }
+
+      return $tickets;
     }
 }
