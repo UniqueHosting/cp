@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Routing\Redirector;
@@ -17,7 +18,7 @@ class DashboardController extends Controller
     {
       $currentAccessToken = $this->CheckIfTokenIsExpired();
 
-      $ticketController = new ticketController;
+      $ticketController = new TicketController;
       $fetchedTickets = $ticketController->FetchAllTickets($currentAccessToken);
 
       $data = (object) [

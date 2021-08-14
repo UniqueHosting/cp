@@ -10,21 +10,21 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <!-- Fevicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{URL::asset('assets/images/favicon.ico')}}">
         <!-- Start css -->
         <!-- Apex css -->
-        <link href="assets/plugins/apexcharts/apexcharts.css" rel="stylesheet">
+        <link href="{{URL::asset('assets/plugins/apexcharts/apexcharts.css')}}" rel="stylesheet">
         <!-- jvectormap css -->
-        <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+        <link href="{{URL::asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet">
         <!-- Slick css -->
-        <link href="assets/plugins/slick/slick.css" rel="stylesheet">
-        <link href="assets/plugins/slick/slick-theme.css" rel="stylesheet">
+        <link href="{{URL::asset('assets/plugins/slick/slick.css')}}" rel="stylesheet">
+        <link href="{{URL::asset('assets/plugins/slick/slick-theme.css')}}" rel="stylesheet">
         <!-- Switchery css -->
-        <link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet">
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/flag-icon.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="{{URL::asset('assets/plugins/switchery/switchery.min.css')}}" rel="stylesheet">
+        <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{URL::asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{URL::asset('assets/css/flag-icon.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{URL::asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -33,7 +33,7 @@
     <body class="vertical-layout">
         <div id="infobar-settings-sidebar" class="infobar-settings-sidebar">
             <div class="infobar-settings-sidebar-head d-flex w-100 justify-content-between">
-                <h4>Settings</h4><a href="javascript:void(0)" id="infobar-settings-close" class="infobar-settings-close"><img src="assets/images/svg-icon/close.svg" class="img-fluid menu-hamburger-close" alt="close"></a>
+                <h4>Settings</h4><a href="javascript:void(0)" id="infobar-settings-close" class="infobar-settings-close"><img src="{{URL::asset('assets/images/svg-icon/close.svg')}}" class="img-fluid menu-hamburger-close" alt="close"></a>
             </div>
             <div class="infobar-settings-sidebar-body">
                 <div class="custom-mode-setting">
@@ -77,21 +77,21 @@
                         </div>
                         <div class="col-6">
                             <div class="account-box active">
-                                <img src="assets/images/users/boy.svg" class="img-fluid" alt="user">
+                                <img src="{{URL::asset('assets/images/users/boy.svg')}}" class="img-fluid" alt="user">
                                 <h5>John</h5>
                                 <p>CEO</p>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="account-box">
-                                <img src="assets/images/users/women.svg" class="img-fluid" alt="user">
+                                <img src="{{URL::asset('assets/images/users/women.svg')}}" class="img-fluid" alt="user">
                                 <h5>Kate</h5>
                                 <p>COO</p>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="account-box">
-                                <img src="assets/images/users/men.svg" class="img-fluid" alt="user">
+                                <img src="{{URL::asset('assets/images/users/men.svg')}}" class="img-fluid" alt="user">
                                 <h5>Mark</h5>
                                 <p>MD</p>
                             </div>
@@ -112,7 +112,7 @@
             <div class="leftbar">
                 <div class="sidebar">
                     <div class="navigationbar">
-                        <div class="vertical-menu-icon">
+                        <!-- <div class="vertical-menu-icon">
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <div class="logobar">
                                     <a href="index.html" class="logo logo-small"><img src="assets/images/small_logo.svg" class="img-fluid" alt="logo"></a>
@@ -123,16 +123,15 @@
                                 <a class="nav-link" id="v-pills-uikits-tab" data-toggle="pill" href="#v-pills-uikits" role="tab" aria-controls="v-pills-uikits" aria-selected="false"><img src="assets/images/svg-icon/ui-kits.svg" class="img-fluid" alt="UI Kits" data-toggle="tooltip" data-placement="top" title="UI Kits"></a>
                                 <a class="nav-link" id="v-pills-pages-tab" data-toggle="pill" href="#v-pills-pages" role="tab" aria-controls="v-pills-pages" aria-selected="false"><img src="assets/images/svg-icon/pages.svg" class="img-fluid" alt="Pages" data-toggle="tooltip" data-placement="top" title="Pages"></a>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="vertical-menu-detail">
                             <div class="logobar">
-                                <a href="index.html" class="logo logo-large"><strong>Unique Hosting</strong></a>
+                                <a href="#" class="logo logo-large"><strong>Unique Hosting</strong></a>
                             </div>
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-crm" role="tabpanel" aria-labelledby="v-pills-crm-tab">
                                     <ul class="vertical-menu">
-                                        <li><h5 class="menu-title">Control Panel</h5></li>
-                                        <li><a href="#"><img src="assets/images/svg-icon/dashboard.svg" class="img-fluid" alt="dashboard">Dashboard</a></li>
+                                        <li><a href="{{route('dashboard')}}"><img src="{{URL::asset('assets/images/svg-icon/dashboard.svg')}}" class="img-fluid" alt="dashboard">Dashboard</a></li>
                                         <!-- <li><a href="crm-projects.html"><img src="assets/images/svg-icon/reports.svg" class="img-fluid" alt="projects">Projects</a></li>
                                         <li><a href="crm-lead-status.html"><img src="assets/images/svg-icon/charts.svg" class="img-fluid" alt="leads">Lead Status</a></li>
                                         <li><a href="crm-clients.html"><img src="assets/images/svg-icon/customers.svg" class="img-fluid" alt="clients">Clients</a></li> -->
@@ -372,31 +371,7 @@
             <div class="rightbar">
                 @include('layouts.navigation')
 
-                <div class="breadcrumbbar">
-                    <div class="row align-items-center">
-                        <div class="col-md-8 col-lg-8">
-                            <h4 class="page-title">Control Panel</h4>
-                            <div class="breadcrumb-list">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Control Panel</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4">
-                            <div class="widgetbar">
-                                <button class="btn btn-primary-rgba"><i class="feather icon-plus mr-2"></i>Add something</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contentbar">
-                  <main>
-                    {{ $slot }}
-                  </main>
-                </div>
+                {{ $slot }}
 
                 <div class="footerbar">
                     <footer class="footer">
@@ -407,30 +382,30 @@
         </div>
         <!-- End Containerbar -->
         <!-- Start js -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/vertical-menu.js"></script>
+        <script src="{{URL::asset('assets/js/jquery.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/popper.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/modernizr.min.js')}}"></script>
+        <script src="{{URL::asset('assets/js/detect.js')}}"></script>
+        <script src="{{URL::asset('assets/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{URL::asset('assets/js/vertical-menu.js')}}"></script>
         <!-- Switchery js -->
-        <script src="assets/plugins/switchery/switchery.min.js"></script>
+        <script src="{{URL::asset('assets/plugins/switchery/switchery.min.js')}}"></script>
         <!-- Apex js -->
-        <script src="assets/plugins/apexcharts/apexcharts.min.js"></script>
-        <script src="assets/plugins/apexcharts/irregular-data-series.js"></script>
+        <script src="{{URL::asset('assets/plugins/apexcharts/apexcharts.min.js')}}"></script>
+        <script src="{{URL::asset('assets/plugins/apexcharts/irregular-data-series.js')}}"></script>
         <!-- Vector Maps js -->
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-        <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="{{URL::asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
+        <script src="{{URL::asset('assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
         <!-- Editable Tabels -->
-        <script src="assets/js/custom/custom-table-editable.js"></script>
-        <script src="assets/plugins/tabledit/jquery.tabledit.js"></script>
+        <script src="{{URL::asset('assets/js/custom/custom-table-editable.js')}}"></script>
+        <script src="{{URL::asset('assets/plugins/tabledit/jquery.tabledit.js')}}"></script>
         <!-- Slick js -->
-        <script src="assets/plugins/slick/slick.min.js"></script>
+        <script src="{{URL::asset('assets/plugins/slick/slick.min.js')}}"></script>
         <!-- Custom Dashboard js -->
-        <script src="assets/js/custom/custom-dashboard.js"></script>
+        <script src="{{URL::asset('assets/js/custom/custom-dashboard.js')}}"></script>
         <!-- Core js -->
-        <script src="assets/js/core.js"></script>
+        <script src="{{URL::asset('assets/js/core.js')}}"></script>
         <!-- End js -->
     </body>
 </html>
