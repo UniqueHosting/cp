@@ -61,7 +61,7 @@
 ----------------------------
 */
 @import url("https://fonts.googleapis.com/css?family=Mukta+Vaani:200,300,400,500,600,700,800&display=swap");
-/* 
+/*
 --------------------------------
     : Custom - General css :
 --------------------------------
@@ -302,7 +302,7 @@ code {
 
 /*
 .vertical-menu-icon .nav-pills .nav-link.active:before {
-    content: "";    
+    content: "";
     position: absolute;
     left: 52px;
     top: auto;
@@ -317,7 +317,7 @@ code {
     border-radius: 3px;
 }
 */
-/* 
+/*
 -------------------------------
     : Custom - Helper css :
 -------------------------------
@@ -1047,7 +1047,7 @@ code {
   background-color: rgba(20, 29, 70, 0.1);
 }
 
-/* 
+/*
 --------------------------------
     : Custom - Example css :
 --------------------------------
@@ -1425,7 +1425,7 @@ code {
   background-color: #141d46;
 }
 
-/* 
+/*
 ----------------------------------
     : Custom - Bootstrap css :
 ----------------------------------
@@ -1740,7 +1740,7 @@ mark {
   color: #141d46;
 }
 
-/* 
+/*
 ------------------------------
     : Custom - Icons css :
 ------------------------------
@@ -26537,7 +26537,7 @@ mark {
   content: "";
 }
 
-/* 
+/*
 -----------------------------
     : Custom - Menu css :
 -----------------------------
@@ -26843,7 +26843,7 @@ mark {
   color: #3B82F6;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Topbar css :
 -------------------------------
@@ -27331,7 +27331,7 @@ mark {
   margin-right: 0;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Alerts css :
 -------------------------------
@@ -27442,7 +27442,7 @@ mark {
   border-top-color: #141d46;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Badges css :
 -------------------------------
@@ -27659,7 +27659,7 @@ mark {
   color: #ffffff;
 }
 
-/* 
+/*
 --------------------------------
     : Custom - Buttons css :
 --------------------------------
@@ -28920,7 +28920,7 @@ mark {
   box-shadow: 0 0 0 0.2rem #2b3e95;
 }
 
-/* 
+/*
 ---------------------------------
     : Custom - Calender css :
 ---------------------------------
@@ -29027,7 +29027,7 @@ mark {
   cursor: move;
 }
 
-/* 
+/*
 ------------------------------
     : Custom - Cards css :
 ------------------------------
@@ -29189,7 +29189,7 @@ mark {
   float: right;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Charts css :
 -------------------------------
@@ -29848,7 +29848,7 @@ canvas {
   font-family: "Mukta Vaani", sans-serif !important;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Chat css :
 -------------------------------
@@ -29999,7 +29999,7 @@ canvas {
   margin: 0 5px;
 }
 
-/* 
+/*
 ---------------------------------
     : Custom - Collapse css :
 ---------------------------------
@@ -30119,7 +30119,7 @@ canvas {
   border-bottom: none;
 }
 
-/* 
+/*
 ----------------------------------
     : Custom - Dashboard css :
 ----------------------------------
@@ -30303,7 +30303,7 @@ canvas {
   padding: 10px 15px 7px;
 }
 
-/* 
+/*
 -----------------------------------
     : Custom - eCommerce css :
 -----------------------------------
@@ -30526,7 +30526,7 @@ canvas {
     left: -80px;
   }
 }
-/* 
+/*
 -------------------------------
     : Custom - Emails css :
 -------------------------------
@@ -30593,7 +30593,7 @@ canvas {
   color: #3B82F6;
 }
 
-/* 
+/*
 -----------------------------------------
     : Custom - Form Colorpicker css :
 -----------------------------------------
@@ -30650,7 +30650,7 @@ canvas {
   box-shadow: none;
 }
 
-/* 
+/*
 -----------------------------------------
     : Custom - Form Date Picker css :
 -----------------------------------------
@@ -30866,7 +30866,7 @@ canvas {
   font-size: 16px;
 }
 
-/* 
+/*
 -------------------------------------
     : Custom - Form Editors css :
 -------------------------------------
@@ -30969,7 +30969,7 @@ canvas {
   background: #3B82F6 !important;
 }
 
-/* 
+/*
 --------------------------------------
     : Custom - Form Elements css :
 --------------------------------------
@@ -31350,7 +31350,7 @@ input[type=range]:focus {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* 
+/*
 -------------------------------------
     : Custom - Form Selects css :
 -------------------------------------
@@ -31501,7 +31501,7 @@ input[type=range]:focus {
   background-color: #3B82F6;
 }
 
-/* 
+/*
 -----------------------------------------
     : Custom - Form File Upload css :
 -----------------------------------------
@@ -31517,7 +31517,7 @@ input[type=range]:focus {
   font-size: 30px;
 }
 
-/* 
+/*
 ----------------------------------------
     : Custom - Form Validation css :
 ----------------------------------------
@@ -31546,7 +31546,7 @@ input[type=range]:focus {
   display: block;
 }
 
-/* 
+/*
 ------------------------------------
     : Custom - Form Wizard css :
 ------------------------------------
@@ -31766,7 +31766,7 @@ input[type=range]:focus {
     width: 100%;
   }
 }
-/* 
+/*
 -------------------------------
     : Custom - Gallery css :
 -------------------------------
@@ -31863,7 +31863,7 @@ input[type=range]:focus {
   opacity: 1;
 }
 
-/* 
+/*
 --------------------------------
     : Custom - Invoice css :
 --------------------------------
@@ -31925,7 +31925,7 @@ input[type=range]:focus {
     margin-top: 30px;
   }
 }
-/* 
+/*
 ---------------------------------------
     : Custom - jQuery Confirm css :
 ---------------------------------------
@@ -32008,7 +32008,7 @@ input[type=range]:focus {
   border-top: none;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - jsTree css :
 -------------------------------
@@ -32043,7 +32043,7 @@ input[type=range]:focus {
   line-height: 26px;
 }
 
-/* 
+/*
 --------------------------------------
     : Custom - Kanban Board css :
 --------------------------------------
@@ -32082,7 +32082,7 @@ input[type=range]:focus {
   transform: scale(1.1);
 }
 
-/* 
+/*
 -----------------------------
     : Custom - Maps css :
 -----------------------------
@@ -32148,7 +32148,7 @@ input[type=range]:focus {
     height: 200px;
   }
 }
-/* 
+/*
 ------------------------------
     : Custom - Modal css :
 ------------------------------
@@ -32196,7 +32196,7 @@ input[type=range]:focus {
   display: block;
 }
 
-/* 
+/*
 ---------------------------------
     : Custom - Nestable css :
 ---------------------------------
@@ -32314,7 +32314,7 @@ input[type=range]:focus {
   border-radius: 3px;
 }
 
-/* 
+/*
 -------------------------------------------
     : Custom - Onboarding Screens css :
 -------------------------------------------
@@ -32366,7 +32366,7 @@ input[type=range]:focus {
   content: none;
 }
 
-/* 
+/*
 -----------------------------------
     : Custom - Pagination css :
 -----------------------------------
@@ -32399,7 +32399,7 @@ input[type=range]:focus {
   border-color: rgba(0, 0, 0, 0.03);
 }
 
-/* 
+/*
 --------------------------------
     : Custom - Pnotify css :
 --------------------------------
@@ -32455,7 +32455,7 @@ input[type=range]:focus {
   font-size: 20px;
 }
 
-/* 
+/*
 --------------------------------------------
     : Custom - Popovers & Tooltips css :
 --------------------------------------------
@@ -32524,7 +32524,7 @@ input[type=range]:focus {
   padding: 4px 10px;
 }
 
-/* 
+/*
 --------------------------------
     : Custom - Pricing css :
 --------------------------------
@@ -32563,7 +32563,7 @@ input[type=range]:focus {
   padding-bottom: 30px;
 }
 
-/* 
+/*
 ------------------------------
     : Custom - Print css :
 ------------------------------
@@ -32589,7 +32589,7 @@ input[type=range]:focus {
     margin-left: 0;
   }
 }
-/* 
+/*
 ------------------------------------
     : Custom - Progressbar css :
 ------------------------------------
@@ -32602,7 +32602,7 @@ input[type=range]:focus {
   background-color: #3B82F6;
 }
 
-/* 
+/*
 -------------------------------------
     : Custom - Range Slider css :
 -------------------------------------
@@ -32817,7 +32817,7 @@ input[type=range]:focus {
   color: #8A98AC;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Rating css :
 -------------------------------
@@ -33360,7 +33360,7 @@ input[type=range]:focus {
     color: #3B82F6;
   }
 }
-/* 
+/*
 ---------------------------------------
     : Custom - Security Pages css :
 ---------------------------------------
@@ -33495,7 +33495,7 @@ input[type=range]:focus {
     text-align: left;
   }
 }
-/* 
+/*
 -----------------------------------
     : Custom - Summernote css :
 -----------------------------------
@@ -33591,7 +33591,7 @@ input[type=range]:focus {
   padding: 5px 0 10px 5px;
 }
 
-/* 
+/*
 ------------------------------------
     : Custom - Sweet Alert css :
 ------------------------------------
@@ -33704,7 +33704,7 @@ input[type=range]:focus {
   background-color: #f9616d;
 }
 
-/* 
+/*
 ----------------------------------
     : Custom - Switchery css :
 ----------------------------------
@@ -33742,7 +33742,7 @@ input[type=range]:focus {
   width: 40px;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Tables css :
 -------------------------------
@@ -34110,7 +34110,7 @@ table.focus-on tfoot tr.focused td {
   font-family: "feather" !important;
 }
 
-/* 
+/*
 -----------------------------
     : Custom - Tabs css :
 -----------------------------
@@ -34197,7 +34197,7 @@ table.focus-on tfoot tr.focused td {
   display: block;
 }
 
-/* 
+/*
 ---------------------------------
     : Custom - Timeline css :
 ---------------------------------
@@ -34206,7 +34206,7 @@ table.focus-on tfoot tr.focused td {
   padding: 2.5em 0;
 }
 
-/* 
+/*
 --------------------------------
     : Custom - Toolbar css :
 --------------------------------
@@ -34426,7 +34426,7 @@ table.focus-on tfoot tr.focused td {
   background: #0e1532;
 }
 
-/* 
+/*
 -------------------------------
     : Custom - Tour css :
 -------------------------------
@@ -34557,7 +34557,7 @@ table.focus-on tfoot tr.focused td {
     color: #96a3b6;
   }
 }
-/* 
+/*
 --------------------------------
     : Custom - Widgets css :
 --------------------------------
@@ -34758,7 +34758,7 @@ table.focus-on tfoot tr.focused td {
     margin-top: 15px;
   }
 }
-/* 
+/*
 -----------------------------------
     : Custom - Responsive css :
 -----------------------------------
@@ -34979,4 +34979,11 @@ table.focus-on tfoot tr.focused td {
   }
 }
 
+.logobar {
+    padding: 20px 0;
+    margin-bottom: 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    font-size: 20.3px;
+}
 /*# sourceMappingURL=style.css.map */
