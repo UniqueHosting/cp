@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="row">
+          <div class="row mb-3">
             <div class="col-md-6 col-lg-6 col-xl-6 ">
               <div class="order-primary-detail mb-4">
                 <h6>Subject</h6>
@@ -43,25 +43,22 @@
               </div>
             </div>
           </div>
-          <div class="row mb-5">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="order-primary-detail mb-4">
-                <h6>Name</h6>
-                <p class="mb-0">{{$data['contact']['firstName'] . $data['contact']['lastName']}}</p>
-                @isset($data['contact']['account']['accountName'])
-                <p class="mb-0">{{$data['contact']['account']['accountName']}}</p>
-                @endisset
-              </div>
-            </div>
+          <div class="row mb-3">
             <div class="col-md-6 col-lg-6 col-xl-3">
               <div class="order-primary-detail mb-4">
                 <h6>Contact Info</h6>
+
+                <p class="mb-0">{{$data['contact']['firstName'] }} {{ $data['contact']['lastName']}}</p>
+                @isset($data['contact']['account']['accountName'])
+                <p class="mb-0"><strong>{{$data['contact']['account']['accountName']}}</strong></p>
+                @endisset
+
                 <p class="mb-0">Phone : {{$data['contact']['phone']}}</p>
                 <p class="mb-0">Mobile : {{$data['contact']['mobile']}}</p>
                 <p class="mb-0">Email : {{$data['contact']['email']}}</p>
 
-                @isset($data['contact']['account']['website'])
-                <p class="mb-0">Website : {{$data['contact']['account']['website']}}</p>
+                @isset($data['cf']['cf_website'])
+                <p class="mb-0">Website :<a href="{{$data['cf']['cf_website']}}"> {{$data['cf']['cf_website']}}</a></p>
                 @endisset
 
               </div>
@@ -69,10 +66,22 @@
           </div>
           <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-6 ">
-              <div class="order-primary-detail mb-4">
-                <h6>Description</h6>
-                <p>{{ $data['description'] }}</p>
+              <div class="order-primary-detail mb-0">
+                <h5>Description</h5> 
+                <p>{!! $data['description'] !!}</p> <br>
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-3">
+              <div class="order-primary-detail mb-4">
+                <h6>Created Time</h6>
+                <p class="mb-0">{{ date('d-m-Y H:i', strtotime($data['createdTime'])) }}</p> <br>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3">
+              <h6>ModifiedTime</h6>
+              <p class="mb-0">{{ date('d-m-Y H:i', strtotime($data['modifiedTime'])) }}</p>
             </div>
           </div>
         </div>
