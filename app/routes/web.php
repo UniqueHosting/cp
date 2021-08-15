@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/ticket/{id}', [TicketController::class, 'show'])->middleware('auth')->name('ticket.show');
+Route::get('/account', [UserController::class, 'show'])->middleware('auth')->name('user.show');
 
 
 require __DIR__.'/auth.php';

@@ -131,7 +131,8 @@
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-crm" role="tabpanel" aria-labelledby="v-pills-crm-tab">
                                     <ul class="vertical-menu">
-                                        <li><a href="{{route('dashboard')}}"><img src="{{URL::asset('assets/images/svg-icon/dashboard.svg')}}" class="img-fluid" alt="dashboard">Dashboard</a></li>
+                                      <li><a href="{{route('dashboard')}}"><img src="{{URL::asset('assets/images/svg-icon/dashboard.svg')}}" class="img-fluid" alt="dashboard">Dashboard</a></li>
+                                        <li><a href="{{route('user.show')}}"><img src="{{URL::asset('assets/images/svg-icon/customers.svg')}}" class="img-fluid" alt="dashboard">My Account</a></li>
                                         <!-- <li><a href="crm-projects.html"><img src="assets/images/svg-icon/reports.svg" class="img-fluid" alt="projects">Projects</a></li>
                                         <li><a href="crm-lead-status.html"><img src="assets/images/svg-icon/charts.svg" class="img-fluid" alt="leads">Lead Status</a></li>
                                         <li><a href="crm-clients.html"><img src="assets/images/svg-icon/customers.svg" class="img-fluid" alt="clients">Clients</a></li> -->
