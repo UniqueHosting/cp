@@ -47,7 +47,7 @@ class DashboardController extends Controller
     }
 
     public function GetNewToken($refreshToken){
-      $response = Http::post('https://accounts.zoho.eu/oauth/v2/token?refresh_token='. $refreshToken .'&client_id=1000.IFSVQ2PYNU5I4MS4XTV9XB6BNRL89M&client_secret=dbe3f734c184fae4057d2d9c7ee12e8bcc145183bb&scope=Desk.tickets.All&redirect_uri=https://cp.unique-hosting.nl/dashboard&grant_type=refresh_token');
+      $response = Http::post('https://accounts.zoho.eu/oauth/v2/token?refresh_token='. $refreshToken .'&client_id=1000.IFSVQ2PYNU5I4MS4XTV9XB6BNRL89M&client_secret=dbe3f734c184fae4057d2d9c7ee12e8bcc145183bb&scope=Desk.tickets.All,Desk.contacts.Read&redirect_uri=https://cp.unique-hosting.nl/dashboard&grant_type=refresh_token');
       return json_decode($response)->access_token;
     }
 
