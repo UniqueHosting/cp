@@ -122,7 +122,7 @@
                                         <div class="userbox">
                                             <ul class="list-unstyled mb-0">
                                                 <li class="media dropdown-item">
-                                                    <a href="{{route('user.show')}}" class="profile-icon"><img src="{{URL::asset('assets/images/svg-icon/crm.svg')}}" class="img-fluid" alt="user">My Account</a>
+                                                    <a href="{{route('user.show')}}" class="profile-icon"><img src="{{URL::asset('assets/images/svg-icon/crm.svg')}}" class="img-fluid" alt="user">Mijn Account</a>
                                                 </li>
                                                 <!-- <li class="media dropdown-item">
                                                     <a href="#" class="profile-icon"><img src="assets/images/svg-icon/email.svg" class="img-fluid" alt="email">Email</a>

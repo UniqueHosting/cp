@@ -27,61 +27,68 @@
         <div class="card-header">
           <div class="row align-items-center">
             <div class="col-7">
-              <h5 class="card-title mb-0">Ticket  #{{$data['ticketNumber']}}</h5>
+              <h5 class="card-title mb-0">#{{$data->tickets['ticketNumber']}} - {{$data->tickets['subject']}}</h5>
             </div>
             <div class="col-5 text-right">
-              <span class="badge badge-success-inverse" style="font-size:18px">{{$data['status']}}</span>
+              <span class="badge badge-success-inverse" style="font-size:18px">{{$data->tickets['status']}}</span>
             </div>
           </div>
         </div>
         <div class="card-body">
-          <div class="row mb-3">
-            <div class="col-md-6 col-lg-6 col-xl-6 ">
-              <div class="order-primary-detail mb-4">
-                <h6>Subject</h6>
-                <p class="mb-0">{{$data['subject']}}</p>
+          <div class="description">
+            <div class="card-body">
+              <div class="row">
+                <div class="">
+                  <div class="col-md-10">
+                    <p>{!! $data->tickets['description'] !!}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="order-primary-detail mb-4">
-                <h6>Contact Info</h6>
 
-                <p class="mb-0">{{$data['contact']['firstName'] }} {{ $data['contact']['lastName']}}</p>
-                @isset($data['contact']['account']['accountName'])
-                <p class="mb-0"><strong>{{$data['contact']['account']['accountName']}}</strong></p>
-                @endisset
-
-                <p class="mb-0">Phone : {{$data['contact']['phone']}}</p>
-                <p class="mb-0">Mobile : {{$data['contact']['mobile']}}</p>
-                <p class="mb-0">Email : {{$data['contact']['email']}}</p>
-
-                @isset($data['cf']['cf_website'])
-                <p class="mb-0">Website :<a href="{{$data['cf']['cf_website']}}"> {{$data['cf']['cf_website']}}</a></p>
-                @endisset
-
+          @for ($i = 0; $i < count($data->threads); $i++)
+          <div class="response">
+            <hr>
+            <div class="card-body">
+              <div class="row d-flex justify-content-between m-b-30">
+                <div style="padding: 0px 10px">
+                  <div class="media">
+                    <img class="align-self-center mr-3" src="{{URL::asset('assets/images/users/men.svg')}}" alt="Generic placeholder image">
+                    <div class="media-body">
+                      <h6 class="mt-0">{{$data->threads[$i]['author']['name']}}</h6>
+                      <p class="text-muted mb-0">{{$data->threads[$i]['author']['email']}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding: 0px 10px">
+                  <div class="open-email-head">
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">{{ date('d-m-Y H:i', strtotime($data->threads[$i]['createdTime'])) }}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div style="color:black ">
+                  <div class="col-md-10">
+                    <p>{{ $data->threads[$i]['summary'] }}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-6 ">
-              <div class="order-primary-detail mb-0">
-                <h5>Description</h5> 
-                <p>{!! $data['description'] !!}</p> <br>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <div class="order-primary-detail mb-4">
-                <h6>Created Time</h6>
-                <p class="mb-0">{{ date('d-m-Y H:i', strtotime($data['createdTime'])) }}</p> <br>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-              <h6>ModifiedTime</h6>
-              <p class="mb-0">{{ date('d-m-Y H:i', strtotime($data['modifiedTime'])) }}</p>
+          @endfor
+          <hr>
+          <div class="card-body">
+            <p>(( this section still under development ))</p>
+            <div class="d-flex">
+              <h5 class="mt-2">Staat Wijzeggen :</h5>
+              <select class="select2-single form-control select2-hidden-accessible ml-3" name="state" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width:10%">
+                  <option data-select2-id="3">Select</option>
+                  <option value="Open" data-select2-id="1">Open</option>
+                  <option value="Afgerond" data-select2-id="2">Afgrond</option>
+              </select>
             </div>
           </div>
         </div>

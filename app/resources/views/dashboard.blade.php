@@ -33,20 +33,20 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>department</th>
-                    <th>Contact Person</th>
-                    <th>Subject</th>
-                    <th>Status</th>
+                    <th>Onderwerp</th>
+                    <th>Staat</th>
+                    <th>Datum</th>
+                    <th>--</th>
                   </tr>
                 </thead>
                 <tbody>
                   @for ($i = 0; $i < count($data->fetchedTickets); $i++)
                   <tr>
                     <td><a href="{{route('ticket.show', $data->fetchedTickets[$i]['id'])}}">{{ $data->fetchedTickets[$i]['ticketNumber']}}</a></td>
-                    <td>{{ $data->fetchedTickets[$i]['department']['name']}}</td>
-                    <td>{{ $data->fetchedTickets[$i]['contact']['firstName']}}  {{ $data->fetchedTickets[$i]['contact']['lastName']}}</td>
                     <td>{{ $data->fetchedTickets[$i]['subject']}}</td>
                     <td>{{ $data->fetchedTickets[$i]['status']}}</td>
+                    <td>{{ date('d-m-Y H:i', strtotime($data->fetchedTickets[$i]['createdTime'])) }}</td>
+                    <td>--</td>
                   </tr>
                   @endfor
                 </tbody>

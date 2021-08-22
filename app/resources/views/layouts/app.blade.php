@@ -131,11 +131,23 @@
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="v-pills-crm" role="tabpanel" aria-labelledby="v-pills-crm-tab">
                                     <ul class="vertical-menu">
-                                      <li><a href="{{route('dashboard')}}"><img src="{{URL::asset('assets/images/svg-icon/dashboard.svg')}}" class="img-fluid" alt="dashboard">Dashboard</a></li>
-                                        <li><a href="{{route('user.show')}}"><img src="{{URL::asset('assets/images/svg-icon/customers.svg')}}" class="img-fluid" alt="dashboard">My Account</a></li>
-                                        <!-- <li><a href="crm-projects.html"><img src="assets/images/svg-icon/reports.svg" class="img-fluid" alt="projects">Projects</a></li>
-                                        <li><a href="crm-lead-status.html"><img src="assets/images/svg-icon/charts.svg" class="img-fluid" alt="leads">Lead Status</a></li>
-                                        <li><a href="crm-clients.html"><img src="assets/images/svg-icon/customers.svg" class="img-fluid" alt="clients">Clients</a></li> -->
+                                      <li><h5 class="menu-title">Algemeen</h5></li>
+                                      <li><a href="{{route('dashboard')}}"><i class="fa fa-area-chart"></i>Dashboard</a></li>
+                                      <li><a href="#"><i class="fa fa-cloud"></i>Mijn hosting</a></li>
+                                      <li><a href="#"><i class="fa fa-address-card"></i>Mijn domeinnamen</a></li>
+                                      <li><a href="#"><i class="fa fa-suitcase"></i>Mijn diensten</a></li>
+                                      <li><h5 class="menu-title">Diensten</h5></li>
+                                      <li><a href="#"><i class="fa fa-server"></i>Dedicated server</a></li>
+                                      <li><a href="#"><i class="fa fa-mixcloud"></i>VPS</a></li>
+                                      <li><a href="#"><i class="fa fa-globe"></i>Shared hosting</a></li>
+                                      <li><a href="#"><i class="fa fa-address-card-o"></i>Domeinnamen</a></li>
+                                      <li><a href="#"><i class="fa fa-unlock-alt"></i>SSL</a></li>
+                                      <li><a href="#"><i class="fa fa-file-text"></i>Licenties</a></li>
+                                      <li><a href="#"><i class="fa fa-th-list"></i>Overig</a></li>
+                                      <li><h5 class="menu-title">Account</h5></li>
+                                      <li><a href="{{route('user.show')}}"><i class="fa fa-user"></i>Mijn Account</a></li>
+                                      <li><a href="#"><i class="fa fa-bell"></i>Notificaties</a></li>
+                                      <li><a href="#"><i class="fa fa-user-secret"></i>Privacy</a></li>
                                     </ul>
                                 </div>
                                 <!-- <div class="tab-pane fade" id="v-pills-ecommerce" role="tabpanel" aria-labelledby="v-pills-ecommerce-tab">
@@ -407,6 +419,10 @@
         <script src="{{URL::asset('assets/js/custom/custom-dashboard.js')}}"></script>
         <!-- Core js -->
         <script src="{{URL::asset('assets/js/core.js')}}"></script>
+        <script src="{{URL::asset('assets/plugins/bootstrap-xeditable/js/bootstrap-editable.min.js')}}"></script>
+        <script src="{{URL::asset('assets/plugins/moment/moment.js')}}"></script>
+        <script src="{{URL::asset('assets/js/custom/custom-form-xeditable.js')}}"></script>
+
         <!-- End js -->
     </body>
 </html>

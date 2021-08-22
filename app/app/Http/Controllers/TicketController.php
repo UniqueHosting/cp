@@ -44,8 +44,24 @@ class TicketController extends Controller
       }else{
         $ticket = null;
       }
-
       return $ticket;
+    }
+
+    public function FetchThreads($accessToken,$id){
+
+      $response = Http::withHeaders([
+        'orgId' => '20078274006',
+        'Authorization' => 'Zoho-oauthtoken '. $accessToken
+      ])->get('https://desk.zoho.eu/api/v1/tickets/' . $id . '/threads');
+
+      $fetchedThreads = json_decode($response,true);
+
+      if(isset($fetchedThreads['data'])){
+        $threads = $fetchedThreads['data'];
+      }else{
+        $threads = null;
+      }
+      return $threads;
     }
 
     public function Show($id){
@@ -53,7 +69,11 @@ class TicketController extends Controller
       $dashbaordController = new DashboardController;
       $currentAccessToken = $dashbaordController->CheckIfTokenIsExpired();
 
-      $data = $this->FetchTicketById($currentAccessToken,$id);
+      $data = (object) [
+        'tickets' => $this->FetchTicketById($currentAccessToken,$id),
+        'threads' => $this->FetchThreads($currentAccessToken,$id)
+      ];
+      //dd($data);
       return view('tickets.show')->with('data',$data);
     }
 }
