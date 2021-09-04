@@ -46,7 +46,6 @@
               </div>
             </div>
           </div>
-
           @for ($i = 0; $i < count($data->threads); $i++)
           <div class="response">
             <hr>
@@ -79,21 +78,60 @@
             </div>
           </div>
           @endfor
-          <hr>
-          <div class="card-body">
-            <p>(( this section still under development ))</p>
-            <div class="d-flex">
-              <h5 class="mt-2">Staat Wijzeggen :</h5>
-              <select class="select2-single form-control select2-hidden-accessible ml-3" name="state" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width:10%">
-                  <option data-select2-id="3">Select</option>
-                  <option value="Open" data-select2-id="1">Open</option>
-                  <option value="Afgerond" data-select2-id="2">Afgrond</option>
-              </select>
+          <div class="card-body" style="background-color: #f7f7f7; border-radius: 16px; border: 2px solid #e8e8e8;">
+          <p class="mt-2 text-muted">Ticket Status Is <strong>{{$data->tickets['status']}}</strong></p>
+          <p class="mt-2 text-muted">Status wijzigen ?</p>
+
+          <select class="select2-single form-control select2-hidden-accessible" name="state" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width:10%" id="stateSelector" onchange="ChangeButtonState()">
+            @if($data->tickets['status'] == "Open")
+            <option value="Open" data-select2-id="1">Open</option>
+            <option value="Afgerond" data-select2-id="2">Afgrond</option>
+            @else
+            <option value="Afgerond" data-select2-id="1">Afgrond</option>
+            <option value="Open" data-select2-id="2">Open</option>
+            @endif
+          </select>
+          <form action="" method="post">
+            <div class="textarea" id="threadTextArea" style="display:none;">
+              <br>
+              <textarea name="name" rows="8" cols="80" style="border: 2px solid #e8e8e8;"></textarea>
+              <br>
             </div>
-          </div>
+            <input type="submit" id="updateValue" name="updateValue" value="Save" class="btn btn-primary-rgba mt-3 px-5" style="display:none;">
+          </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+</div>
+
+<script type="text/javascript">
+
+window.onload = function() {
+  ChangeButtonState();
+};
+
+
+function ChangeButtonState() {
+
+  var x = document.getElementById("updateValue");
+  var s = document.getElementById("stateSelector");
+  var t = document.getElementById("threadTextArea");
+
+  if (s.options[s.selectedIndex].text == "Open") {
+    x.style.display = "block";
+    t.style.display = "block";
+    x.value = "Sturen";
+  }
+  else
+  {
+    x.value = "Opslaan";
+    t.style.display = "none";
+    x.style.display = "block";
+  }
+
+}
+
+</script>
 </x-app-layout>

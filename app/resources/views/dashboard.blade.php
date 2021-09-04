@@ -34,7 +34,7 @@
                   <tr>
                     <th>#</th>
                     <th>Onderwerp</th>
-                    <th>Staat</th>
+                    <th>Status</th>
                     <th>Datum</th>
                     <th>--</th>
                   </tr>
