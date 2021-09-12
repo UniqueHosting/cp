@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/ticket/{id}', [TicketController::class, 'show'])->middleware('auth')->name('ticket.show');
+Route::post('/ticket/sendThread', [TicketController::class, 'SendThread'])->middleware('auth')->name('ticket.sendThread');
 Route::get('/account', [UserController::class, 'show'])->middleware('auth')->name('user.show');
 
 

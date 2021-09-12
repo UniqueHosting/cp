@@ -46,7 +46,8 @@
               </div>
             </div>
           </div>
-          @for ($i = 0; $i < count($data->threads); $i++)
+          @for ($i = count($data->threads) - 1; $i >= 0; $i--)
+          @if( $data->threads[$i]['channel'] != "WEB")
           <div class="response">
             <hr>
             <div class="card-body">
@@ -70,32 +71,39 @@
               </div>
               <div class="row">
                 <div style="color:black ">
-                  <div class="col-md-10">
-                    <p>{{ $data->threads[$i]['summary'] }}</p>
+                  <div class="">
+                    <div>{!! $data->threads[$i]['content'] !!}</div>
+                    <!-- <a href="#" class="btn btn-primary-rgba px-3">Read More</a> -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          @endif
           @endfor
           <div class="card-body" style="background-color: #f7f7f7; border-radius: 16px; border: 2px solid #e8e8e8;">
-          <p class="mt-2 text-muted">Ticket Status Is <strong>{{$data->tickets['status']}}</strong></p>
+          <!-- <p class="mt-2 text-muted">Ticket Status Is <strong>{{$data->tickets['status']}}</strong></p> -->
           <p class="mt-2 text-muted">Status wijzigen ?</p>
 
-          <select class="select2-single form-control select2-hidden-accessible" name="state" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width:10%" id="stateSelector" onchange="ChangeButtonState()">
-            @if($data->tickets['status'] == "Open")
-            <option value="Open" data-select2-id="1">Open</option>
-            <option value="Afgerond" data-select2-id="2">Afgrond</option>
-            @else
-            <option value="Afgerond" data-select2-id="1">Afgrond</option>
-            <option value="Open" data-select2-id="2">Open</option>
-            @endif
-          </select>
-          <form action="" method="post">
+          <form action="{{route('ticket.sendThread')}}" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$data->tickets['id']}}">
+            <select class="select2-single form-control select2-hidden-accessible" name="status" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width:10%" id="stateSelector" onchange="ChangeButtonState()">
+              @if($data->tickets['status'] == "Open")
+              <option value="Open" data-select2-id="1">Open</option>
+              <option value="Afgerond" data-select2-id="2">Afgrond</option>
+              @else
+              <option value="Afgerond" data-select2-id="1">Afgrond</option>
+              <option value="Open" data-select2-id="2">Open</option>
+              @endif
+            </select>
             <div class="textarea" id="threadTextArea" style="display:none;">
+              <hr>
+              <input class="form-control mb-1" type="text" name="name" placeholder="Naam" readonly  style="width:300px" value="{{$data->tickets['contact']['firstName']}} {{$data->tickets['contact']['lastName']}}">
+              <input class="form-control mb-3" type="email" name="email" placeholder="Email" readonly style="width:300px" value="{{$data->tickets['contact']['email']}}">
+              <textarea id="t-input" name="thread" rows="8" cols="80" style="border: 2px solid #e8e8e8;" placeholder="Reactie ..." required></textarea>
               <br>
-              <textarea name="name" rows="8" cols="80" style="border: 2px solid #e8e8e8;"></textarea>
-              <br>
+              <hr>
             </div>
             <input type="submit" id="updateValue" name="updateValue" value="Save" class="btn btn-primary-rgba mt-3 px-5" style="display:none;">
           </form>
@@ -118,17 +126,20 @@ function ChangeButtonState() {
   var x = document.getElementById("updateValue");
   var s = document.getElementById("stateSelector");
   var t = document.getElementById("threadTextArea");
+  var tinput = document.getElementById("t-input");
 
   if (s.options[s.selectedIndex].text == "Open") {
+    tinput.required = true;
     x.style.display = "block";
     t.style.display = "block";
     x.value = "Sturen";
   }
   else
   {
-    x.value = "Opslaan";
+    tinput.required = false;
     t.style.display = "none";
     x.style.display = "block";
+    x.value = "Opslaan";
   }
 
 }
