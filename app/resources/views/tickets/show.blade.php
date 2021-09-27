@@ -54,11 +54,19 @@
               <div class="row d-flex justify-content-between m-b-30">
                 <div style="padding: 0px 10px">
                   <div class="media">
+                    @if($data->threads[$i]['fromEmailAddress'] == "Ryan van Brunschot<client@unique-hosting.nl>")
+                    <img class="align-self-center mr-3" src="{{URL::asset('assets/images/users/men.svg')}}" alt="Generic placeholder image">
+                    <div class="media-body">
+                      <h6 class="mt-0">{{ Auth::user()->name }}</h6>
+                      <p class="text-muted mb-0">{{ Auth::user()->email }}</p>
+                    </div>
+                    @else
                     <img class="align-self-center mr-3" src="{{URL::asset('assets/images/users/men.svg')}}" alt="Generic placeholder image">
                     <div class="media-body">
                       <h6 class="mt-0">{{$data->threads[$i]['author']['name']}}</h6>
                       <p class="text-muted mb-0">{{$data->threads[$i]['author']['email']}}</p>
                     </div>
+                    @endif
                   </div>
                 </div>
                 <div style="padding: 0px 10px">
@@ -72,8 +80,11 @@
               <div class="row">
                 <div style="color:black ">
                   <div class="">
-                    <div>{!! $data->threads[$i]['content'] !!}</div>
-                    <!-- <a href="#" class="btn btn-primary-rgba px-3">Read More</a> -->
+                    <?php
+                    $text = $data->threads[$i]['content'];
+                    $output = \App\Http\Controllers\TicketController::delete_all_between('Info-Section', 'End-Section', $text);
+                     ?>
+                    <div>{!! $output !!}</div>
                   </div>
                 </div>
               </div>

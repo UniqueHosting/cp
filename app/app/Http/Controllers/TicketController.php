@@ -131,7 +131,12 @@ class TicketController extends Controller
       curl_setopt($ch, CURLOPT_URL, 'https://desk.zoho.eu/api/v1/tickets/' . $data['id'] .'/sendReply');
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       curl_setopt($ch, CURLOPT_POST, 1);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, "{  \"ticketStatus\" : \"Afgrond\",  \"channel\" : \"EMAIL\",  \"attachmentIds\" : [ \"1312123141313\" ],  \"to\" : \"info@unique-hosting.nl\",  \"fromEmailAddress\" : \"client@unique-hosting.nl\",  \"contentType\" : \"plainText\",  \"content\" : \"". $text ." \\n \\n Afzender : ".$data['name']." \\n Email : ".$data['email']." \",  \"isForward\" : \"true\"}");
+      curl_setopt($ch, CURLOPT_POSTFIELDS, "{  \"ticketStatus\" : \"Afgrond\",
+          \"channel\" : \"EMAIL\",  \"attachmentIds\" : [ \"1312123141313\" ],
+            \"to\" : \"info@unique-hosting.nl\",  \"fromEmailAddress\" : \"client@unique-hosting.nl\",
+              \"contentType\" : \"plainText\",
+                \"content\" : \"". $text ." \\n Info-Section \\n Afzender : ".$data['name']." \\n Email : ".$data['email']." \\n End-Section \",
+                  \"isForward\" : \"true\"}");
 
       $headers = array();
       $headers[] = 'orgId: 20078274006';
@@ -164,6 +169,20 @@ class TicketController extends Controller
       $result = curl_exec($ch);
       curl_close($ch);
       return $result;
+    }
+
+    public static function delete_all_between($beginning, $end, $string) {
+
+      $beginningPos = strpos($string, $beginning);
+      $endPos = strpos($string, $end);
+      if ($beginningPos === false || $endPos === false) {
+        return $string;
+      }
+
+      $textToDelete = substr($string, $beginningPos, ($endPos + strlen($end)) - $beginningPos);
+
+      return \App\Http\Controllers\TicketController::delete_all_between($beginning, $end, str_replace($textToDelete, '', $string)); // recursion to ensure all occurrences are replaced
+
     }
 
 }
